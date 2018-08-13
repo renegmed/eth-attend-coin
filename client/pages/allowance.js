@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Label } from 'semantic-ui-react';
-import Layout from '../components/Layout'; 
+import Layout from '../components/Layout';
 import Web3Container from '../lib/Web3Container'
-import ApproveForm from '../components/ApproveForm'
+import AllowanceForm from '../components/AllowanceForm' 
 
-class ApproveTransfer extends Component {   
-  state = {web3: null, contract: null,  currentAccount: '',   accountBalance: 0}
-
+class Allowance extends Component {   
+  state = {web3: null, contract: null,  currentAccount: '',   accountBalance: 0, remaining: 0}
+   
   async componentDidMount () {
     const { web3, contract, name, symbol, totalSupply, decimals, currentAccount, accountBalance } = this.props
 
-    console.log('------ ApproveTransfer.componentDidMount() ---------');
+    console.log('------ Allowance.componentDidMount() ---------');
     console.log(web3)
     console.log(contract)    
     console.log(currentAccount)    
@@ -26,6 +26,7 @@ class ApproveTransfer extends Component {
         accountBalance,       
     }); 
   }
+  
   render() { 
     const { web3, contract, currentAccount } = this.state
     return (      
@@ -45,19 +46,18 @@ class ApproveTransfer extends Component {
         <p></p>
         <p></p>       
         <div> 
-            <ApproveForm web3={web3} contract={contract} currentAccount={currentAccount}/> 
+            <AllowanceForm web3={web3} contract={contract} currentAccount={currentAccount}/>
         </div>
       </Layout>
     );
   }
 }
- 
 
 export default () => (
   <Web3Container
     renderLoading={() => <div>Loading Dapp Page...</div>}
     render={({ web3, contract, name, symbol, totalSupply, decimals, currentAccount, accountBalance }) => (
-      <ApproveTransfer
+      <Allowance
         contract={contract} 
         web3={web3} 
         name={name} 

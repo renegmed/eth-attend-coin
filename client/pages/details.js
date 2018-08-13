@@ -70,6 +70,7 @@ class Details extends Component {
             </Label>
             <p></p>
         </div>
+           
         )
     }    
 }

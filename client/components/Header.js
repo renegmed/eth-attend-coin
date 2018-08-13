@@ -16,6 +16,11 @@ export default () => {
         <Link route="/approve">
           <a className="item">Approve</a>
         </Link>
+
+        <Link route="/allowance">
+          <a className="item">Allowance</a>
+        </Link>
+
       </Menu.Menu>
     </Menu> 
    

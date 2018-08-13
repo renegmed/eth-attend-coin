@@ -21,7 +21,7 @@ class Transfer extends Component {
   async componentDidMount () {
     const { web3, contract, name, symbol, totalSupply, decimals, currentAccount, accountBalance } = this.props
 
-    console.log('------ Details.componentDidMount() ---------');
+    console.log('------ Transfer.componentDidMount() ---------');
     console.log(web3)
     console.log(contract)    
     console.log(currentAccount)    
@@ -36,7 +36,7 @@ class Transfer extends Component {
         currentAccount, 
         accountBalance,       
     }); 
-}
+  }
 
   render() { 
     const { web3, contract, currentAccount } = this.state
